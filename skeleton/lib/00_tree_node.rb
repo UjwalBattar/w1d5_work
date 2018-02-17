@@ -71,6 +71,21 @@ class PolyTreeNode
     nil
   end
 
+  def bfs(tgt)
+    # debugger
+    queue = []
+    queue << self
+    x = queue.shift
+    return x if x.value == tgt
+    x.children.each do |child|
+      queue += child
+    end
+    until queue.empty?
+      return nil
+    end
+
+  end
+
 end
 
   # def inspect
